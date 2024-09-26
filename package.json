@@ -1,24 +1,38 @@
 {
 	"name": "vscode-owl-ms",
-	"description": "Owl 2 manchester syntax plugin for vscode",
+	"version": "0.0.2",
+	"displayName": "Owl Manchester Syntax",
+	"description": "Owl language server support for vscode",
 	"author": "Janek Winkler",
-	"license": "MIT",
-	"version": "0.0.1",
+	"license": "Apache-2.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/janek/vscode-owl-ms"
 	},
 	"publisher": "JanekWinkler",
-	"categories": [],
+	"categories": [
+		"Programming Languages"
+	],
 	"keywords": [
-		"owl-ms"
+		"owl-ms",
+		"vscode",
+		"owl"
 	],
 	"engines": {
 		"vscode": "^1.75.0"
 	},
 	"activationEvents": [
-		"onLanguage:plaintext"
+		"onLanguage:owl-ms"
 	],
+	"extensionKind": [
+		"workspace",
+		"ui"
+	],
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#6175BE",
+		"theme": "dark"
+	},
 	"main": "./client/out/extension",
 	"contributes": {
 		"languages": [
@@ -26,6 +40,10 @@
 				"id": "owl-ms",
 				"extensions": [
 					".oms"
+				],
+				"aliases": [
+					"Owl Manchester Syntax",
+					"omn"
 				]
 			}
 		],
@@ -57,9 +75,10 @@
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -b",
 		"watch": "tsc -b -w",
-		"lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
-		"postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-		"test": "sh ./scripts/e2e.sh"
+		"lint": "eslint ./client/src --ext .ts,.tsx",
+		"postinstall": "cd client && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh",
+		"package": "vsce package"
 	},
 	"devDependencies": {
 		"@types/mocha": "^9.1.0",
@@ -68,6 +87,7 @@
 		"@typescript-eslint/parser": "^6.7.0",
 		"eslint": "^8.35.0",
 		"mocha": "^9.2.1",
-		"typescript": "^5.2.2"
+		"typescript": "^5.2.2",
+		"vsce": "^2.15.0"
 	}
 }
