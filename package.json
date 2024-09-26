@@ -7,7 +7,7 @@
 	"license": "Apache-2.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/janek/vscode-owl-ms"
+		"url": "https://github.com/janekx21/vscode-owl-ms"
 	},
 	"publisher": "JanekWinkler",
 	"categories": [
