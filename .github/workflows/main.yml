@@ -12,6 +12,7 @@ jobs:
         - os: windows-latest
           target: x86_64-pc-windows-msvc
           code-target: win32-x64
+          bin-ext: .exe
         #- os: windows-latest
         #  target: i686-pc-windows-msvc
         #- os: windows-latest
@@ -62,7 +63,7 @@ jobs:
 
     - name: Move language server binary
       run: |
-        mv server/target/${{ matrix.target }}/release/owl-ms-language-server server/owl-ms-language-server
+        mv server/target/${{ matrix.target }}/release/owl-ms-language-server${{ matrix.bin-ext }} server/owl-ms-language-server${{ matrix.bin-ext }}
 
     - name: Publish on OVSX
       run: npx ovsx publish --pat ${{ secrets.PAT_OVSX }} --target ${{ matrix.code-target }}
