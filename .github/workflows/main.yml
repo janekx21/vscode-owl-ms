@@ -45,6 +45,7 @@ jobs:
     - name: Install Rust toolchain
       run: |
         # rustup update --no-self-update stable
+        rustup default nightly
         rustup target add ${{ matrix.target }}
         
     - name: Setup Node
