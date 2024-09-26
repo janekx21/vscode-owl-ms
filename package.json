@@ -22,11 +22,8 @@
 		"vscode": "^1.75.0"
 	},
 	"activationEvents": [
+		"onLanguage:plaintext",
 		"onLanguage:owl-ms"
-	],
-	"extensionKind": [
-		"workspace",
-		"ui"
 	],
 	"icon": "icon.png",
 	"galleryBanner": {
@@ -39,35 +36,34 @@
 			{
 				"id": "owl-ms",
 				"extensions": [
-					".oms"
+					".omn"
 				],
 				"aliases": [
-					"Owl Manchester Syntax",
-					"omn"
+					"Owl Manchester Syntax"
 				]
 			}
-		],
-		"configuration": {
-			"type": "object",
-			"title": "Example configuration",
-			"properties": {
-				"olw-ms-language-server.maxNumberOfProblems": {
-					"scope": "resource",
-					"type": "number",
-					"default": 100,
-					"description": "Controls the maximum number of problems produced by the server."
-				},
-				"olw-ms-language-server.trace.server": {
-					"scope": "window",
-					"type": "string",
-					"enum": [
-						"off",
-						"messages",
-						"verbose"
-					],
-					"default": "off",
-					"description": "Traces the communication between VS Code and the language server."
-				}
+		]
+	},
+	"configuration": {
+		"type": "object",
+		"title": "Example configuration",
+		"properties": {
+			"olw-ms-language-server.maxNumberOfProblems": {
+				"scope": "resource",
+				"type": "number",
+				"default": 100,
+				"description": "Controls the maximum number of problems produced by the server."
+			},
+			"olw-ms-language-server.trace.server": {
+				"scope": "window",
+				"type": "string",
+				"enum": [
+					"off",
+					"messages",
+					"verbose"
+				],
+				"default": "off",
+				"description": "Traces the communication between VS Code and the language server."
 			}
 		}
 	},
