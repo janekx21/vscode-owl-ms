@@ -45,6 +45,7 @@ jobs:
     - name: Install Rust toolchain
       run: |
         # rustup update --no-self-update stable
+        rustup default nightly
         rustup target add ${{ matrix.target }}
         
     - name: Setup Node
@@ -64,7 +65,7 @@ jobs:
         mv server/target/${{ matrix.target }}/release/owl-ms-language-server server/owl-ms-language-server
 
     - name: Publish on OVSX
-      run: ovsx publish --pat ${{ secrets.PAT_OVSX }} --target ${{ matrix.code-target }}
+      run: npx ovsx publish --pat ${{ secrets.PAT_OVSX }} --target ${{ matrix.code-target }}
 
     - name: Publish on VSCE
-      run: vsce publish --pat ${{ secrets.PAT_VSCE }} --target ${{ matrix.code-target }}
+      run: npx vsce publish --pat ${{ secrets.PAT_VSCE }} --target ${{ matrix.code-target }}
