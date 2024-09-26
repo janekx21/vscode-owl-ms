@@ -1,6 +1,6 @@
 {
 	"name": "vscode-owl-ms",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"displayName": "Owl Manchester Syntax",
 	"description": "Owl language server support for vscode",
 	"author": "Janek Winkler",
