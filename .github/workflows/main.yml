@@ -64,6 +64,7 @@ jobs:
 
     - name: Move language server binary
       run: |
+        tree server/target
         mv server/target/${{ matrix.target }}/release/owl-ms-language-server${{ matrix.bin-ext }} server/owl-ms-language-server${{ matrix.bin-ext }}
 
     - name: Publish on OVSX
