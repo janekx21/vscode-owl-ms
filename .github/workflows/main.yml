@@ -60,7 +60,7 @@ jobs:
 
     - name: Cargo Build
       working-directory: server
-      run: cargo build --release --target ${{ matrix.target }}
+      run: cargo build --release # --target ${{ matrix.target }}
 
     - name: Move language server binary
       run: |
