@@ -8,6 +8,7 @@ jobs:
   my_job:
 
     strategy:
+      fail-fast: false
       matrix:
         include:
         - os: windows-latest
@@ -22,9 +23,9 @@ jobs:
         - os: ubuntu-20.04
           target: x86_64-unknown-linux-gnu
           code-target: linux-x64
-        #- os: ubuntu-20.04
-        #  target: aarch64-unknown-linux-gnu
-        #  code-target: linux-arm64
+        - os: ubuntu-20.04
+          target: aarch64-unknown-linux-gnu
+          code-target: linux-arm64
         #- os: ubuntu-20.04
         #  target: arm-unknown-linux-gnueabihf
         #  code-target: linux-armhf
