@@ -1,3 +1,5 @@
+> This reposity was moved into https://github.com/janekx21/owl-ms-language-server
+
 # Owl 2 Mancherster Syntax language server support for Visual Studio Code
 
 Provides syntax highlighting and rich intellisense for .omn files in VS Code, using the owl-ms language server.
